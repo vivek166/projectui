@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="myProject">
+<head>
+	<title>projectui</title>
+	<script src="/client/bower_components/angular/angular.min.js"></script>
+</head>
+<body ng-controller="projectController">
+<table border="2">
+	<tr>
+		<th>Project Description</th>
+		<th>Project Feature</th>
+		<th>Project Id</th>
+		<th>Project Title</th>
+		<th>Technology Used</th>
+		<th>My Project</th>
+	</tr>
+	<tr ng-repeat="project in projects">
+		<td>{{project.projectDescription}}</td>
+		<td>{{project.projectFeature}}</td>
+		<td>{{project.projectId}}</td>
+		<td>{{project.projectTitle}}</td>
+		<td>{{project.technologyUsed}}</td>
+		<td>{{projects}}</td>
+	</tr>
+</table>
+<script src="/client/js/app.js"></script>
+</body>
+</html>
