@@ -6,10 +6,18 @@
   "description": "",
   "main": "",
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/vivek166/projectui",
   "dependencies": {
     "angular": "^1.6.4",
     "bootstrap": "^3.3.7",
-    "jquery": "^3.2.1"
-  }
+    "jquery": "^3.2.1",
+    "angular-route": "^1.6.4"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }

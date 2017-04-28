@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app="plunker">
+
+<head>
+<script src="/client/bower_components/angular/angular.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/client/bower_components/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/client/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+<script src="/client/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script  src="/client/bower_components/jquery/dist/jquery.min.js"></script>
+</head>
+
+<body>
+  <div ng-controller="PaginationDemoCtrl">
+    <table class="table">
+      <tr ng-repeat="row in data.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
+        <td>{{row.name}}</td>
+        <td>{{row.id}}</td>
+      </tr>
+    </table>
+View <select ng-model="viewby" ng-change="setItemsPerPage(viewby)"><option>3</option><option>5</option><option>10</option><option>20</option><option>30</option><option>40</option><option>50</option></select> records at a time.
+
+    <pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="pagination-sm" items-per-page="itemsPerPage"></pagination>
+    <pre>The selected page no: {{currentPage}}</pre>
+    <button class="btn btn-info" ng-click="setPage(3)">Set current page to: 3</button>
+  </div>
+  <script src="/client/js/app.js"></script>
+</body>
+</html>

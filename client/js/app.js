@@ -1,17 +1,27 @@
-var app =angular.module('myProject', []);
-/*app.controller('projectController',function($scope){
-	$scope.projects = [{
-		"projectId":102,
-		"projectTitle":"live cricket",
-		"projectDescription":"get the ipl score",
-		"projectFeature":"crickets",
-		"technologyUsed":"java, angular"
-	}];
+var app = angular.module('myProject', ['ngRoute']);
+app.config(function($routeProvider) {
+    $routeProvider
+    .when('/', {
+        templateUrl : 'client/home.html'
+    })
+    .when('/#putproject', {
+        templateUrl : 'client/project/putProject.html',
+        controller : 'putCtrl'
+    })
+    .when('/deleteproject', {
+        templateUrl : 'client/project/deleteProject.html'
+    })
+    .when('/getproject', {
+        templateUrl : 'client/project/getProject.html'
+    })
+    .when('/postproject', {
+        templateUrl : 'client/project/postProject.html'
+    })
+    .otherwise({
+    	redirectTo : '/'
+    });
 });
-*/
-app.controller('projectController', function($scope, $http) {
-    $http.get('http://localhost:8080/projectmanagement/project/103').
-        then(function(response) {
-            $scope.projects = response.data;
-        });
-});
+
+app.controller('putCtrl', function(){
+    alert("helo");
+})
